@@ -7,16 +7,25 @@ import {
   History, 
   FileText, 
   Settings,
-  Zap
+  Zap,
+  GraduationCap,
+  UserCheck,
+  BookOpen
 } from 'lucide-react';
 
-const navItems = [
+const messagingItems = [
   { path: '/', icon: MessageSquare, label: 'Dashboard' },
   { path: '/compose', icon: Send, label: 'Compose Message' },
   { path: '/groups', icon: Users, label: 'Contact Groups' },
   { path: '/templates', icon: FileText, label: 'Templates' },
   { path: '/history', icon: History, label: 'Message History' },
   { path: '/settings', icon: Settings, label: 'Settings' },
+];
+
+const schoolItems = [
+  { path: '/teacher', icon: GraduationCap, label: 'Teacher Dashboard' },
+  { path: '/parent', icon: UserCheck, label: 'Parent Dashboard' },
+  { path: '/students', icon: BookOpen, label: 'Students Dashboard' },
 ];
 
 export function Sidebar() {
