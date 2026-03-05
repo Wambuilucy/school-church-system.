@@ -9,6 +9,9 @@ import Groups from "./pages/Groups";
 import Templates from "./pages/Templates";
 import History from "./pages/History";
 import Settings from "./pages/Settings";
+import TeacherDashboard from "./pages/TeacherDashboard";
+import ParentDashboard from "./pages/ParentDashboard";
+import StudentsDashboard from "./pages/StudentsDashboard";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -26,6 +29,9 @@ const App = () => (
           <Route path="/templates" element={<Templates />} />
           <Route path="/history" element={<History />} />
           <Route path="/settings" element={<Settings />} />
+          <Route path="/teacher" element={<TeacherDashboard />} />
+          <Route path="/parent" element={<ParentDashboard />} />
+          <Route path="/students" element={<StudentsDashboard />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
