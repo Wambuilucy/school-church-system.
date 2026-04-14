@@ -10,7 +10,10 @@ import {
   Zap,
   GraduationCap,
   UserCheck,
-  BookOpen
+  BookOpen,
+  ScrollText,
+  DollarSign,
+  CalendarDays
 } from 'lucide-react';
 
 const messagingItems = [
@@ -26,6 +29,9 @@ const schoolItems = [
   { path: '/teacher', icon: GraduationCap, label: 'Teacher Dashboard' },
   { path: '/parent', icon: UserCheck, label: 'Parent Dashboard' },
   { path: '/students', icon: BookOpen, label: 'Students Dashboard' },
+  { path: '/transcript', icon: ScrollText, label: 'Transcripts' },
+  { path: '/finance', icon: DollarSign, label: 'Finance' },
+  { path: '/events', icon: CalendarDays, label: 'Events' },
 ];
 
 export function Sidebar() {
