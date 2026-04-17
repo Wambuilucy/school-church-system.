@@ -23,6 +23,7 @@ import Groups from "./pages/Groups";
 import Templates from "./pages/Templates";
 import History from "./pages/History";
 import Settings from "./pages/Settings";
+import Suggestions from "./pages/Suggestions";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -49,6 +50,7 @@ function AppRoutes() {
       <Route path="/transcript" element={<ProtectedRoute><Transcript /></ProtectedRoute>} />
       <Route path="/trips" element={<ProtectedRoute><Trips /></ProtectedRoute>} />
       <Route path="/cocurricular" element={<ProtectedRoute><Cocurricular /></ProtectedRoute>} />
+      <Route path="/suggestions" element={<ProtectedRoute><Suggestions /></ProtectedRoute>} />
       
       {/* Teacher-only */}
       <Route path="/" element={<ProtectedRoute allowedRoles={['teacher']}><Index /></ProtectedRoute>} />
