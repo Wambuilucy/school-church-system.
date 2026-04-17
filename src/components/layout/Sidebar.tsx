@@ -4,7 +4,7 @@ import { useAuth } from '@/contexts/AuthContext';
 import { 
   MessageSquare, Users, Send, History, FileText, Settings, Zap,
   GraduationCap, UserCheck, BookOpen, ScrollText, DollarSign,
-  CalendarDays, Bell, Home, Bus, Trophy, LogOut
+  CalendarDays, Bell, Home, Bus, Trophy, LogOut, Lightbulb
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
@@ -29,6 +29,7 @@ const allItems = {
     { path: '/trips', icon: Bus, label: 'School Trips', roles: ['teacher', 'parent', 'student'] },
     { path: '/teacher-directory', icon: Users, label: 'Staff Directory', roles: ['teacher', 'parent'] },
     { path: '/cocurricular', icon: Trophy, label: 'Co-curricular', roles: ['teacher', 'parent', 'student'] },
+    { path: '/suggestions', icon: Lightbulb, label: 'Suggestion Box', roles: ['teacher', 'parent', 'student'] },
     { path: '/settings', icon: Settings, label: 'Settings', roles: ['teacher'] },
   ],
 };
