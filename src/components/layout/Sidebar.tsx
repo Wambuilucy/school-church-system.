@@ -4,7 +4,7 @@ import { useAuth } from '@/contexts/AuthContext';
 import { 
   MessageSquare, Users, Send, History, FileText, Settings, Zap,
   GraduationCap, UserCheck, BookOpen, ScrollText, DollarSign,
-  CalendarDays, Bell, Home, Bus, Trophy, LogOut, Lightbulb
+  CalendarDays, Bell, Home, Bus, Trophy, LogOut, Lightbulb, PlayCircle
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
@@ -23,6 +23,7 @@ const allItems = {
   ],
   // Academics
   academics: [
+    { path: '/learning', icon: PlayCircle, label: 'Learning Hub', roles: ['teacher', 'parent', 'student'] },
     { path: '/transcript', icon: ScrollText, label: 'Transcripts', roles: ['teacher', 'parent', 'student'] },
     { path: '/finance', icon: DollarSign, label: 'Finance', roles: ['teacher', 'parent', 'student'] },
   ],
