@@ -53,8 +53,14 @@ export function Sidebar() {
   const { user, logout } = useAuth();
   const role = user?.role || 'student';
 
-  const messagingItems = allItems.messaging.filter(i => i.roles.includes(role));
-  const schoolItems = allItems.school.filter(i => i.roles.includes(role));
+  const sections: { label: string; items: typeof allItems.overview }[] = [
+    { label: 'Overview', items: allItems.overview.filter(i => i.roles.includes(role)) },
+    { label: 'Dashboards', items: allItems.dashboards.filter(i => i.roles.includes(role)) },
+    { label: 'Academics', items: allItems.academics.filter(i => i.roles.includes(role)) },
+    { label: 'School Life', items: allItems.schoolLife.filter(i => i.roles.includes(role)) },
+    { label: 'Messaging', items: allItems.messaging.filter(i => i.roles.includes(role)) },
+    { label: 'Engagement', items: allItems.engagement.filter(i => i.roles.includes(role)) },
+  ].filter(s => s.items.length > 0);
 
   return (
     <aside className="fixed left-0 top-0 z-40 h-screen w-64 border-r border-border bg-card">
@@ -72,10 +78,11 @@ export function Sidebar() {
 
         {/* Navigation */}
         <nav className="flex-1 space-y-1 px-3 py-4 overflow-y-auto">
-          {messagingItems.length > 0 && (
-            <>
-              <p className="px-3 mb-1 text-xs font-semibold uppercase tracking-wider text-muted-foreground">Messaging</p>
-              {messagingItems.map((item) => {
+          {sections.map((section, idx) => (
+            <div key={section.label}>
+              {idx > 0 && <div className="my-3 border-t border-border" />}
+              <p className="px-3 mb-1 text-xs font-semibold uppercase tracking-wider text-muted-foreground">{section.label}</p>
+              {section.items.map((item) => {
                 const isActive = location.pathname === item.path;
                 return (
                   <Link key={item.path} to={item.path}
@@ -88,24 +95,8 @@ export function Sidebar() {
                   </Link>
                 );
               })}
-              <div className="my-3 border-t border-border" />
-            </>
-          )}
-
-          <p className="px-3 mb-1 text-xs font-semibold uppercase tracking-wider text-muted-foreground">School</p>
-          {schoolItems.map((item) => {
-            const isActive = location.pathname === item.path;
-            return (
-              <Link key={item.path} to={item.path}
-                className={cn(
-                  "flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium transition-all duration-200",
-                  isActive ? "bg-primary text-primary-foreground shadow-md" : "text-muted-foreground hover:bg-secondary hover:text-foreground"
-                )}>
-                <item.icon className="h-5 w-5" />
-                {item.label}
-              </Link>
-            );
-          })}
+            </div>
+          ))}
         </nav>
 
         {/* User + Logout */}
