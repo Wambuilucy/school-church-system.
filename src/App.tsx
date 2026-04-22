@@ -24,6 +24,7 @@ import Templates from "./pages/Templates";
 import History from "./pages/History";
 import Settings from "./pages/Settings";
 import Suggestions from "./pages/Suggestions";
+import Learning from "./pages/Learning";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -51,6 +52,7 @@ function AppRoutes() {
       <Route path="/trips" element={<ProtectedRoute><Trips /></ProtectedRoute>} />
       <Route path="/cocurricular" element={<ProtectedRoute><Cocurricular /></ProtectedRoute>} />
       <Route path="/suggestions" element={<ProtectedRoute><Suggestions /></ProtectedRoute>} />
+      <Route path="/learning" element={<ProtectedRoute><Learning /></ProtectedRoute>} />
       
       {/* Teacher-only */}
       <Route path="/" element={<ProtectedRoute allowedRoles={['teacher']}><Index /></ProtectedRoute>} />
