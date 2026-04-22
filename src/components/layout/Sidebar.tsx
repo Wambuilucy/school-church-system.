@@ -9,10 +9,9 @@ import {
 import { Button } from '@/components/ui/button';
 
 const allItems = {
-  // Top: orientation & alerts
+  // Top: orientation
   overview: [
     { path: '/welcome', icon: Home, label: 'Home', roles: ['teacher', 'parent', 'student'] },
-    { path: '/notifications', icon: Bell, label: 'Notifications', roles: ['teacher', 'parent', 'student'] },
   ],
   // Core role dashboards
   dashboards: [
@@ -42,9 +41,10 @@ const allItems = {
     { path: '/templates', icon: FileText, label: 'Templates', roles: ['teacher'] },
     { path: '/history', icon: History, label: 'Message History', roles: ['teacher'] },
   ],
-  // Engagement & system
+  // Engagement & system — Suggestions then Notifications
   engagement: [
     { path: '/suggestions', icon: Lightbulb, label: 'Suggestion Box', roles: ['teacher', 'parent', 'student'] },
+    { path: '/notifications', icon: Bell, label: 'Notifications', roles: ['teacher', 'parent', 'student'] },
     { path: '/settings', icon: Settings, label: 'Settings', roles: ['teacher'] },
   ],
 };
